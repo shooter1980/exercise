@@ -2,11 +2,10 @@ package com.serhii.code.exercise;
 
 import com.serhii.code.exercise.api.Quiz;
 import com.serhii.code.exercise.api.Response;
-import com.serhii.code.exercise.controller.Controller;
+import com.serhii.code.exercise.controller.ExerciseController;
 import com.serhii.code.exercise.services.CollectServiceI;
-import com.serhii.code.exercise.services.Result;
-import com.serhii.code.exercise.services.ServiceResult;
-import com.serhii.code.exercise.services.TransformerServiceI;
+import com.serhii.code.exercise.api.QuizResponse;
+import com.serhii.code.exercise.services.TransformationServiceI;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
@@ -27,9 +26,9 @@ import static org.mockito.Mockito.when;
 
 
 @ExtendWith(SpringExtension.class)
-@WebFluxTest(Controller.class)
+@WebFluxTest(ExerciseController.class)
 @Import(CollectServiceI.class)
-public class ExerciseTests {
+public class ExerciseControllerTests {
 
     @Autowired
     private WebTestClient webTestClient;
@@ -38,12 +37,12 @@ public class ExerciseTests {
     private CollectServiceI collectService;
 
     @MockBean
-    private TransformerServiceI transformerService;
+    private TransformationServiceI transformerService;
 
     @Test
     public void testAcceptResult() throws Exception {
-        List<ServiceResult> serviceResults = new ArrayList<>();
-        Mono<List<ServiceResult>> monoList = Mono.just(serviceResults);
+        List<QuizResponse> quizRespons = new ArrayList<>();
+        Mono<List<QuizResponse>> monoList = Mono.just(quizRespons);
         when(collectService.collect()).thenReturn(monoList);
         Response res = new Response();
         res.getQuiz().add(new Quiz());

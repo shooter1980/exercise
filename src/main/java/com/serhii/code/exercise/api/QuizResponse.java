@@ -1,4 +1,4 @@
-package com.serhii.code.exercise.services;
+package com.serhii.code.exercise.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -9,10 +9,10 @@ import java.util.List;
 
 @JsonSerialize
 @JsonDeserialize
-public class ServiceResult {
+public class QuizResponse {
     @JsonProperty("response_code")
     private int responseCode;
-    private List<Result> results;
+    private List<QuizResult> quizResults;
 
     public int getResponseCode() {
         return responseCode;
@@ -22,22 +22,22 @@ public class ServiceResult {
         this.responseCode = responseCode;
     }
 
-    public List<Result> getResults() {
-        if(results == null){
-            this.results = new ArrayList<Result>();
+    public List<QuizResult> getResults() {
+        if(quizResults == null){
+            this.quizResults = new ArrayList<QuizResult>();
         }
-        return results;
+        return quizResults;
     }
 
-    public void setResults(List<Result> results) {
-        this.results = results;
+    public void setResults(List<QuizResult> quizResults) {
+        this.quizResults = quizResults;
     }
 
     @Override
     public String toString() {
         return "ServiceResult{" +
                 "responseCode=" + responseCode +
-                ", results=" + results +
+                ", results=" + quizResults +
                 '}';
     }
 }
