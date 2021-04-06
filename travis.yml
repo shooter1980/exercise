@@ -1,0 +1,9 @@
+language: java
+
+jdk:
+  - oraclejdk16
+
+dist: trusty
+
+script: "mvn verify"
+
