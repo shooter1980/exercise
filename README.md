@@ -1,4 +1,7 @@
 # exercise
+![Java CI with Maven](https://github.com/shooter1980/exercice/workflows/Java%20CI%20with%20Maven/badge.svg?event=push)
+[![Build Status](https://travis-ci.com/shooter1980/exercice.svg?branch=master)](https://travis-ci.com/shooter1980/exercice)
+[![codecov](https://codecov.io/gh/shooter1980/exercice/branch/master/graph/badge.svg)](https://codecov.io/gh/shooter1980/exercice)
 Coding Exercise :
 •	Create a Spring boot application as a REST service with following endpoint
 GET /coding/exercise/quiz
