@@ -1,12 +1,16 @@
 package com.serhii.code.exercise.api;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.util.ArrayList;
 import java.util.List;
+@Schema(description = "Quiz")
 @JsonSerialize
 public class Quiz {
+    @Schema(description = "category of result")
     private String category;
+    @Schema(description = "list of results")
     private List<Result> results;
 
     public String getCategory() {

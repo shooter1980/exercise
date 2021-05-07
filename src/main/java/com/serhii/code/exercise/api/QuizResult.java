@@ -3,8 +3,10 @@ package com.serhii.code.exercise.api;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.util.List;
+@Schema(description = "QuizResult")
 @JsonDeserialize
 @JsonSerialize
 public class QuizResult {
