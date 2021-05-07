@@ -23,14 +23,14 @@ import java.util.concurrent.ExecutionException;
 @Tag(name = "ExerciseController")
 public class ExerciseController {
 
- @Autowired
- private CollectServiceI collectService;
+    @Autowired
+    private CollectServiceI collectService;
 
     @Autowired
     private ResponseRepository responseRepository;
 
- @Autowired
- private TransformationServiceI transformationService;
+    @Autowired
+    private TransformationServiceI transformationService;
 
     @Operation(
             summary = "get quiz result"
@@ -51,12 +51,12 @@ public class ExerciseController {
             summary = "get quiz result"
     )
     @GetMapping("/coding/exercise/repo/get/{id}")
-    public Response getFromRepo(@PathVariable Long id){
+    public Response getFromRepo(@PathVariable Long id) {
 
         Optional<ExerciseResponse> byId = responseRepository.findById(id);
-        if(byId.isPresent()){
-        return byId.get().getResponse();
-        }else{
+        if (byId.isPresent()) {
+            return byId.get().getResponse();
+        } else {
             return null;
         }
     }

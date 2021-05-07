@@ -3,6 +3,8 @@ package com.serhii.code.exercise;
 import com.serhii.code.exercise.api.Quiz;
 import com.serhii.code.exercise.api.Response;
 import com.serhii.code.exercise.controller.ExerciseController;
+import com.serhii.code.exercise.jdbc.ExerciseResponse;
+import com.serhii.code.exercise.jdbc.ResponseRepository;
 import com.serhii.code.exercise.services.CollectServiceI;
 import com.serhii.code.exercise.api.QuizResponse;
 import com.serhii.code.exercise.services.TransformationServiceI;
@@ -39,11 +41,15 @@ public class ExerciseControllerTests {
     @MockBean
     private TransformationServiceI transformerService;
 
+    @MockBean
+    private ResponseRepository responseRepository;
+
     @Test
     public void testAcceptResult() throws Exception {
         List<QuizResponse> quizRespons = new ArrayList<>();
         Mono<List<QuizResponse>> monoList = Mono.just(quizRespons);
         when(collectService.collect()).thenReturn(monoList);
+        when(responseRepository.save(any())).thenReturn(new ExerciseResponse());
         Response res = new Response();
         res.getQuiz().add(new Quiz());
         res.getQuiz().add(new Quiz());
