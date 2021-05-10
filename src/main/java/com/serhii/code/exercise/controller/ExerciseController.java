@@ -5,7 +5,6 @@ import com.serhii.code.exercise.jdbc.ExerciseResponse;
 import com.serhii.code.exercise.jdbc.ResponseRepository;
 import com.serhii.code.exercise.services.CollectServiceI;
 import com.serhii.code.exercise.services.TransformationServiceI;
-import io.reactivex.rxjava3.core.Observable;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
