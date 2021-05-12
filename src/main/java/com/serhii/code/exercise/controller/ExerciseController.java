@@ -48,7 +48,7 @@ public class ExerciseController {
 
 
     @Operation(
-            summary = "get quiz result"
+            summary = "get quiz result from MongoDB repository"
     )
     @GetMapping("/coding/exercise/repo/get/{id}")
     public Response getFromRepo(@PathVariable Long id) {
